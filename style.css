@@ -45,6 +45,7 @@
   --card-border-radius: 12px; /* Increased radius */
   --btn-border-radius: 6px;
   --transition-speed: 0.2s;
+  --mobile-menu-height: 4rem; /* Define mobile menu height */
 }
 
 /* Light Mode Override (Optional - can be toggled via JS) */
@@ -760,6 +761,10 @@ button {
     margin-left: 0.4rem;
 }
 
+/* Mobile Bottom Menu Styles */
+.mobile-bottom-menu {
+  display: none; /* Hidden by default */
+}
 
 /* Mobile Styles */
 @media (max-width: 992px) {
@@ -788,7 +793,7 @@ button {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 568px) {
   .app-container {
       overflow-x: hidden; /* Apply overflow prevention here for mobile */
   }
@@ -802,9 +807,15 @@ button {
     display: none;
   }
 
+  /* Hide desktop header icons */
+  .header-icon-desktop {
+    display: none;
+  }
+
   .main-content {
     padding: 1.5rem 1.5rem; /* Increased horizontal padding */
     width: 100%; /* Ensure it takes full available width */
+    padding-bottom: calc(1.5rem + var(--mobile-menu-height)); /* Add padding to prevent overlap with bottom menu */
   }
 
   .main-title {
@@ -829,6 +840,37 @@ button {
   }
   #modal-body h2 {
       font-size: 1.5rem;
+  }
+
+  /* Show and style mobile bottom menu */
+  .mobile-bottom-menu {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--mobile-menu-height);
+    background-color: var(--header-bg);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    border-top: 1px solid var(--card-border);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 1rem;
+    z-index: 100;
+    border-top-left-radius: var(--card-border-radius); /* Rounded top corners */
+    border-top-right-radius: var(--card-border-radius); /* Rounded top corners */
+  }
+
+  .mobile-bottom-menu .theme-toggle,
+  .mobile-bottom-menu .github-link,
+  .mobile-bottom-menu .nav-link {
+    display: flex; /* Ensure icons inside are visible */
+    /* Reuse theme-toggle styles for consistency */
+    width: 2.5rem; /* Slightly larger touch target? */
+    height: 2.5rem;
+    font-size: 1.2rem;
   }
 }
 

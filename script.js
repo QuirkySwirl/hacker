@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoriesList = document.getElementById('categories-list');
     const searchInput = document.getElementById('search-input');
     const themeToggleButton = document.getElementById('theme-toggle');
+    const themeToggleButtonMobile = document.getElementById('theme-toggle-mobile'); // Get mobile button
     const menuToggleButton = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
     const body = document.body;
@@ -20,16 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Theme Handling ---
     const applyTheme = (theme) => {
-        const icon = themeToggleButton.querySelector('i');
+        // Update body class
         if (theme === 'dark') {
             body.classList.add('dark-mode');
             body.classList.remove('light-mode');
-            if (icon) icon.className = 'fas fa-sun';
         } else {
             body.classList.add('light-mode');
             body.classList.remove('dark-mode');
-            if (icon) icon.className = 'fas fa-moon';
         }
+
+        // Update icons on both buttons if they exist
+        const newIconClass = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        const buttons = [themeToggleButton, themeToggleButtonMobile];
+        buttons.forEach(button => {
+            if (button) {
+                const icon = button.querySelector('i');
+                if (icon) icon.className = newIconClass;
+            }
+        });
     };
 
     const savedTheme = localStorage.getItem('theme');
@@ -40,11 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     applyTheme(currentTheme);
 
-    themeToggleButton.addEventListener('click', () => {
+    const handleThemeToggleClick = () => {
         currentTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
         localStorage.setItem('theme', currentTheme);
         applyTheme(currentTheme);
-    });
+    };
+
+    if (themeToggleButton) themeToggleButton.addEventListener('click', handleThemeToggleClick);
+    if (themeToggleButtonMobile) themeToggleButtonMobile.addEventListener('click', handleThemeToggleClick); // Add listener to mobile button
 
     // --- Mobile Sidebar Toggle ---
     menuToggleButton.addEventListener('click', () => {

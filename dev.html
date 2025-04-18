@@ -48,17 +48,17 @@
                     </div>
                 </div>
                 <div class="header-actions">
-                     <!-- Add Navigation Link -->
-                    <a href="index.html" class="nav-link theme-toggle" title="Mental Models">
+                     <!-- Icons moved to mobile-bottom-menu for smaller screens -->
+                    <a href="index.html" class="nav-link theme-toggle header-icon-desktop" title="Mental Models"> <!-- Added header-icon-desktop class -->
                         <i class="fas fa-brain"></i>
                     </a>
-                    <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                    <button id="theme-toggle" class="theme-toggle header-icon-desktop" title="Toggle Theme"> <!-- Added header-icon-desktop class -->
                         <i class="fas fa-sun"></i> <!-- Start with sun icon as default is dark -->
                     </button>
-                    <a href="#" id="github-link" class="github-link theme-toggle" title="View Source (Link TBD)" target="_blank" rel="noopener noreferrer">
+                    <a href="#" id="github-link" class="github-link theme-toggle header-icon-desktop" title="View Source (Link TBD)" target="_blank" rel="noopener noreferrer"> <!-- Added header-icon-desktop class -->
                         <i class="fab fa-github"></i>
                     </a>
-                    <button id="menu-toggle" class="menu-toggle" title="Toggle Menu">
+                    <button id="menu-toggle" class="menu-toggle" title="Toggle Menu"> <!-- This one stays -->
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -125,6 +125,20 @@
 
     <!-- Matrix Background Canvas -->
     <canvas id="matrix-canvas"></canvas>
+
+    <!-- Mobile Bottom Menu -->
+    <div class="mobile-bottom-menu">
+        <a href="index.html" class="nav-link theme-toggle" title="Mental Models"> <!-- Link to index.html -->
+            <i class="fas fa-brain"></i>
+        </a>
+        <button id="theme-toggle-mobile" class="theme-toggle" title="Toggle Theme"> <!-- Use same ID as in index.html -->
+            <i class="fas fa-sun"></i>
+        </button>
+        <a href="#" id="github-link-mobile" class="github-link theme-toggle" title="View Source (Link TBD)" target="_blank" rel="noopener noreferrer"> <!-- Use same ID as in index.html -->
+            <i class="fab fa-github"></i>
+        </a>
+        <!-- Add other icons if needed, e.g., search? -->
+    </div>
 
     <script src="script.js"></script>
 </body>
