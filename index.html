@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Hacker Brain: Mental Models & Biases</title> <!-- Changed Title -->
+    <meta name="description" content="A curated collection of essential mental models and cognitive biases for developers, designers, and thinkers. Explore concepts to make smarter decisions."> <!-- Changed Description -->
+    <meta name="keywords" content="mental models, cognitive bias, decision making, problem solving, psychology, productivity, thinking tools"> <!-- Changed Keywords -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hacker.iyer.dev/"> <!-- Update with final URL (index.html) -->
+    <meta property="og:title" content="Hacker Brain: Mental Models & Biases"> <!-- Changed Title -->
+    <meta property="og:description" content="A curated collection of essential mental models and cognitive biases for developers, designers, and thinkers."> <!-- Changed Description -->
+    <meta property="og:image" content="https://hacker.iyer.dev/og-image-models.png"> <!-- Update with actual OG image URL -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hacker.iyer.dev/"> <!-- Update with final URL (index.html) -->
+    <meta property="twitter:title" content="Hacker Brain: Mental Models & Biases"> <!-- Changed Title -->
+    <meta property="twitter:description" content="A curated collection of essential mental models and cognitive biases for developers, designers, and thinkers."> <!-- Changed Description -->
+    <meta property="twitter:image" content="https://hacker.iyer.dev/og-image-models.png"> <!-- Update with actual OG image URL -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Removed tsparticles CDN -->
+</head>
+<body class="dark-mode page-mental-models"> <!-- Added page-specific class -->
+
+    <div class="app-container">
+        <header class="header">
+            <div class="header-content">
+                <a href="index.html" class="logo"> <!-- Link to self -->
+                    <span>🧠</span>HackerBrain
+                </a>
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="search-input" placeholder="Search models & biases..."> <!-- Changed placeholder -->
+                    </div>
+                </div>
+                <div class="header-actions">
+                     <!-- Add Navigation Link -->
+                    <a href="dev.html" class="nav-link theme-toggle" title="Laws & Principles"> <!-- Renamed Title -->
+                        <i class="fas fa-gavel"></i> <!-- Changed Icon -->
+                    </a>
+                    <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                        <i class="fas fa-sun"></i> <!-- Start with sun icon as default is dark -->
+                    </button>
+                    <a href="#" id="github-link" class="github-link theme-toggle" title="View Source (Link TBD)" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <button id="menu-toggle" class="menu-toggle" title="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-content">
+                     <!-- Add Navigation Link -->
+                     <div class="nav-links">
+                        <a href="index.html" class="nav-link-sidebar active"> <!-- Mark current page active -->
+                           <i class="fas fa-brain"></i> Mental Models
+                       </a>
+                       <a href="dev.html" class="nav-link-sidebar">
+                           <i class="fas fa-gavel"></i> Laws & Principles <!-- Renamed Link Text & Icon -->
+                       </a>
+                   </div>
+                    <h3 class="sidebar-title">Categories</h3>
+                    <div class="categories-list" id="categories-list">
+                        <!-- Categories will be populated here by JavaScript -->
+                        <div class="category-item active" data-category="all">
+                            <span class="category-icon"><i class="fas fa-asterisk"></i></span> All
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <div class="hero-section">
+                    <h1 class="main-title">Mental Models & Biases</h1> <!-- Changed Title -->
+                    <p class="main-description">
+                        Explore essential Mental Models & Cognitive Biases for developers & thinkers.
+                        Sharpen your mind, make smarter decisions. <!-- Changed Description -->
+                    </p>
+                </div>
+
+                <div class="resources-container" id="resources-container">
+                    <!-- Resource cards will be loaded here by JavaScript -->
+                    <p>Loading resources...</p>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Content aggregated & inspired by Hacker Laws, Mental Model repositories, and community contributions.</p>
+                <p>Vibe coded with 🤖 & ☕️</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div id="modal-content" class="modal-content">
+            <button id="modal-close" class="modal-close-button" title="Close">&times;</button>
+            <div id="modal-body">
+                <!-- Modal content will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Removed Particle background container -->
+
+    <!-- Matrix Background Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
