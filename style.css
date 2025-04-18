@@ -789,6 +789,10 @@ button {
 }
 
 @media (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+  }
+
   .header-content {
     padding: 0 1rem;
   }
@@ -798,7 +802,7 @@ button {
   }
 
   .main-content {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1.5rem; /* Increased horizontal padding */
   }
 
   .main-title {
