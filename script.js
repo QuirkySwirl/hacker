@@ -133,6 +133,44 @@ document.addEventListener('DOMContentLoaded', () => {
             ${sourceLinkHtml}
         `;
         modalOverlay.classList.add('active');
+
+        // --- Process links within the newly added modal content ---
+        const links = modalBody.querySelectorAll('a');
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+
+            if (href) {
+                if (href.startsWith('http://') || href.startsWith('https://')) {
+                    // External link: open in new tab
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                } else if (href.startsWith('#')) {
+                    // Internal link or TODO
+                    if (href === '#TODO') {
+                        // Replace #TODO link with its text
+                        link.parentNode.replaceChild(document.createTextNode(link.textContent), link);
+                    } else {
+                        // Internal link to another resource
+                        const targetId = href.substring(1); // Remove '#'
+                        const targetResource = allResources.find(r => r.id === targetId);
+
+                        if (targetResource) {
+                            // Valid internal link: add click listener to open in modal
+                            link.addEventListener('click', (event) => {
+                                event.preventDefault(); // Prevent default anchor behavior
+                                openModal(targetResource); // Open the linked resource in the modal
+                            });
+                        } else {
+                            // Dead internal link: replace with text
+                            console.warn(`Internal link target not found: ${targetId}`);
+                            link.parentNode.replaceChild(document.createTextNode(link.textContent), link);
+                        }
+                    }
+                }
+                // Ignore other relative links like './images/...' as they work correctly
+            }
+        });
+        // --- End link processing ---
     };
 
     const closeModal = () => {

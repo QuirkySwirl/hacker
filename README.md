@@ -1,6 +1,8 @@
 # Hacker Brain: Explore Mental Models & Dev Principles
 
 [![Built with HTML/CSS/JS](https://img.shields.io/badge/Built%20with-HTML%2FCSS%2FJS-orange?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge&logo=github)](https://github.com/QuirkySwirl/hacker)
 
 A curated collection of essential Mental Models, Cognitive Biases, Developer Laws, and Software Principles presented in a clean, searchable interface with a dynamic background.
 
@@ -12,14 +14,16 @@ Hacker Brain aims to be a quick reference and exploration tool for developers, d
 
 ## Features
 
-*   **Two Content Sections:** Separate pages for "Mental Models & Biases" and "Laws & Principles".
+*   **Two Content Sections:** Separate pages for "Mental Models & Biases" (`index.html`) and "Laws & Principles" (`dev.html`).
+*   **Randomized Display:** Resources are shuffled on load/refresh for variety (using Fisher-Yates).
 *   **Card-Based UI:** Resources displayed as visually distinct cards.
 *   **Search Functionality:** Filter resources by keywords within the current page.
 *   **Category Filtering:** Sidebar allows filtering resources by their category.
 *   **Detailed Modal View:** Click on a card to view the full description, examples, and source link in a popup modal.
 *   **Dark/Light Theme:** Toggle between dark (default) and light themes, with preference saved in local storage.
-*   **Responsive Design:** Adapts layout for different screen sizes (desktop, tablet, mobile).
+*   **Responsive Design:** Adapts layout for different screen sizes, including a styled mobile bottom menu.
 *   **Dynamic Background:** Features a Matrix-style falling character animation for visual flair.
+*   **GitHub Link:** Easy access to the source code repository from the header/menu.
 *   **Minimalist Styling:** Clean UI with subtle hover effects and accent colors.
 
 ## Live Demo
@@ -47,8 +51,8 @@ Hacker Brain aims to be a quick reference and exploration tool for developers, d
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
-    cd hacker-brain # Or your project directory name
+    git clone https://github.com/QuirkySwirl/hacker.git
+    cd hacker
     ```
 2.  **Open HTML Files:** Simply open `index.html` or `dev.html` in your web browser. No build step or local server is strictly required for basic functionality.
 
@@ -58,7 +62,7 @@ Hacker Brain aims to be a quick reference and exploration tool for developers, d
 
 Contributions are welcome! If you find issues, have suggestions, or want to add more resources:
 
-1.  Fork the repository.
+1.  Fork the repository ([https://github.com/QuirkySwirl/hacker/fork](https://github.com/QuirkySwirl/hacker/fork)).
 2.  Create a new branch (`git checkout -b feature/your-feature-name`).
 3.  Make your changes.
 4.  Commit your changes (`git commit -am 'Add some feature'`).
@@ -69,7 +73,7 @@ Please ensure any added content is relevant and properly formatted in the JSON f
 
 ## License
 
-*(Consider adding a LICENSE file - e.g., MIT License)*
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
