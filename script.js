@@ -154,6 +154,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Data Loading and Card Creation ---
 
+    // --- Fisher-Yates Shuffle Function ---
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+        }
+    }
+
      // Helper to generate placeholder URL
      const generatePlaceholderImageUrl = (text) => {
         const placeholderBg = '2c2c2c';
@@ -414,8 +422,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // No normalization needed anymore, data structure is specific to the page
             allResources = data;
 
-            // Shuffle resources for variety on load? Optional.
-            // allResources.sort(() => Math.random() - 0.5);
+            // Shuffle the resources array using Fisher-Yates
+            shuffleArray(allResources);
 
             populateCategories(allResources); // Populate categories from the loaded data
             filterAndDisplayResources(); // Display initial view

@@ -850,17 +850,27 @@ button {
     left: 0;
     right: 0;
     height: var(--mobile-menu-height);
-    background-color: var(--header-bg);
-    backdrop-filter: blur(10px) saturate(180%);
-    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    /* MODIFIED: Use direct RGBA for more transparency */
+    /* background-color: var(--header-bg); */
+    background-color: rgba(13, 17, 23, 0.7); /* Dark mode base, adjust alpha */
+    backdrop-filter: blur(12px) saturate(180%); /* Slightly more blur? */
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
     border-top: 1px solid var(--card-border);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
     align-items: center;
     justify-content: space-around;
     padding: 0 1rem;
     z-index: 100;
-    border-top-left-radius: var(--card-border-radius); /* Rounded top corners */
-    border-top-right-radius: var(--card-border-radius); /* Rounded top corners */
+    /* MODIFIED: Increased border radius */
+    /* border-top-left-radius: var(--card-border-radius); */
+    /* border-top-right-radius: var(--card-border-radius); */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  /* Need to add override for light mode background */
+  .light-mode .mobile-bottom-menu {
+      background-color: rgba(246, 248, 250, 0.8); /* Light mode base, adjust alpha */
   }
 
   .mobile-bottom-menu .theme-toggle,
